@@ -1,2 +1,2 @@
-# SIC Site made from React for Webathon 2.0
+# Web-a-thon 2.0
 ## Team Brainstromers 
