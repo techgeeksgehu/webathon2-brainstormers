@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function SideBar() {
-    const [visibleNav, setVisiblity] = useState(true);
+export default function SideBar() { //header
+    const [visibleNav, setVisiblity] = useState(false);
     function ToggleNav() {
         const sideNav = document.getElementById('sideNav');
         setVisiblity(!visibleNav)
@@ -14,6 +14,7 @@ export default function SideBar() {
         }
         else {
             sideNav.style.display = 'none';
+
             Array.from(document.getElementsByClassName('ham')).forEach(line => {
                 line.style.display = 'block';
             });
@@ -23,7 +24,7 @@ export default function SideBar() {
     return (
         <>
             <div className="Navigation">
-                <div className='ham-burgerbtn mt-5 ml-2 sm:hidden block absolute top-0 left-2 z-10'>
+                <div className='ham-burgerbtn mt-8 ml-2 sm:hidden block absolute top-0 left-2 z-10'>
                     <button type='button' onClick={ToggleNav}>
                         <div className='w-[30px] h-[5px] border bg-gray-600 ham'></div>
                         <div className='w-[30px] mt-1 h-[5px] border bg-gray-600 ham'></div>
@@ -31,8 +32,8 @@ export default function SideBar() {
                     </button>
                 </div>
 
-                <div className="Main-Navigation h-screen absolute top-0 w-fit bg-black text-white p-2 z-10 duration-700 lg:block" id="sideNav">
-                    <div className="flex">
+                <div className="Main-Navigation h-screen absolute top-0 w-fit bg-black text-white p-2 z-10 duration-700 " id="sideNav">
+                    <div className="flex justify-between">
                         <div className="p-4 font-bold text-xl">
                             <p className="text-3xl"><Link to={"/"} >SIC</Link></p>
                         </div>

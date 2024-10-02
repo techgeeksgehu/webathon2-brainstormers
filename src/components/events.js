@@ -73,10 +73,10 @@ export default function Event() {
               <img className="absolute top-0  right-0 m-5 sm:h-20 h-14" src={logo} alt="logo" />
             </div>
 
-            <div className="mt-10 space-y-12 lg:grid lg:grid-cols-3 lg:gap-5 lg:space-y-0 relative bottom-20 bg-slate-200 p-5 pb-2 rounded-xl">
+            <div className="mt-10 space-y-12 lg:grid lg:grid-cols-3 lg:gap-5 gap-x-4 lg:space-y-0 relative bottom-20 bg-slate-200 p-5 pb-2 rounded-xl">
               {callouts.map((callout) => (
                 <div key={callout.name} className="group relative">
-                  <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white aspect-auto group-hover:opacity-75 sm:h-64">
+                  <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white aspect-auto group-hover:p-1  sm:h-64 bg-clip-padding border-2 border-transparent bg-gradient-to-r from-red-500 via-green-500 to-blue-500">
                     <a href={callout.href}><img
                       src={callout.imageSrc}
                       alt={callout.imageAlt}

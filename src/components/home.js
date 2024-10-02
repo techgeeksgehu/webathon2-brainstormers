@@ -2,20 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import BG from '../assets/bg/BG.jpg'
 import logo from '../assets/logo.png'
-import EventPage from './events'
+import Header from './header'
 
 export default function home() {
   function slideUp() {
     const page = document.getElementById('first-slide')
-    const nav = document.getElementById('Navigation')
+    const content = document.getElementById('Main-content')
     page.classList.add('translate-y-[-100%]', 'duration-500')
     setTimeout(() => {
-      nav.classList.remove('hidden')
-    }, 320)
+      content.classList.remove('hidden')
+    }, 100)
   }
   return (
     <>
-      <div className="Home-page-container h-screen w-screen absolute z-20" id='first-slide'>
+      <div className="Home-page-container h-screen w-screen absolute z-20 overflow-hidden" id='first-slide'>
         <div className='h-screen w-screen bg-gradient-to-t from-black/80'>
           <img src={BG} alt='bg' className='h-screen sm:w-screen absolute object-cover right-0 left-0 -z-10'></img>
           <img src={logo} alt='SIC_Logo' className='absolute top-0  right-0 m-5 sm:h-20 h-14' ></img>
@@ -30,7 +30,7 @@ export default function home() {
           </div>
 
           <div className='Text-content'>
-            <div className='About absolute right-0 bottom-0 m-5 z-30'>
+            <div className='About absolute right-0 bottom-0 sm:mr-5 z-30 m-2'>
               <div className='bg-white/20 h-fit w-fit p-4 border rounded-3xl'>
                 <div className='poppins-semibold text-white lg:text-xl md:text-lg text-[8px]'>
                   <div className='poppins-bold justify-start flex mb-2'>About Us</div>
@@ -60,8 +60,21 @@ export default function home() {
           </div>
         </div>
       </div >
-      <div className='z-0' id='Navigation'>
-        <EventPage />
+
+      <div className='Main-Content z-10 hidden' id='Main-content'>
+        <div className='Navigation'>
+          < Header />
+        </div>
+
+        <div className='Content'>
+          <img className='absolute top-0 right-0 m-5 sm:h-20 h-14' src={logo} alt="logo"></img>
+
+          <div className='h-screen w-screen flex justify-center items-center'>
+            <h1 className='poppins-semibold text-xl'> Check Event Page!</h1>
+          </div>
+
+        </div>
+
       </div>
     </>
   )
